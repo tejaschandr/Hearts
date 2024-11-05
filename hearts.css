@@ -1,0 +1,162 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+}
+
+#gameArea {
+    width: 900px;
+    height: 800px;
+    margin: 20px auto;
+    background-color: #076324;
+    border-color: brown;
+    box-shadow: 0 0 20px rgba(117, 73, 3, 0.706);
+    display: flex;
+    flex-direction: column;
+}
+
+#scoreBoard {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px;
+    overflow-y: auto;
+    max-height: 200px;
+}
+
+#scoreBoard table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#scoreBoard th, #scoreBoard td {
+    text-align: center;
+    padding: 5px;
+    border: 1px solid #444;
+}
+
+#scoreBoard th {
+    background-color: rgba(255, 255, 255, 0.1);
+    font-weight: bold;
+}
+
+#scoreBoard .total-score {
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+#messageArea {
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#middleRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 1;
+    padding: 20px;
+}
+
+#centerArea {
+    width: 300px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#currentTrick {
+    width: 250px;
+    height: 250px;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.opponentHand, .playerHand {
+    display: flex;
+    justify-content: center;
+    height: 140px;
+    position: relative;
+}
+
+#topHand, #bottomHand {
+    width: 100%;
+}
+
+#topHand {
+    margin-bottom: 20px;
+}
+
+#bottomHand {
+    margin-top: 20px;
+}
+
+#leftHand, #rightHand {
+    width: 100px;
+    height: 300px;
+}
+
+.card {
+    width: 100px;
+    height: 140px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+    position: relative;
+}
+
+.playerHand .card {
+    margin: 0 -25px;
+}
+
+.playerHand .card:hover, .card.selected {
+    transform: translateY(-20px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    z-index: 10;
+}
+
+.card.selected {
+    box-shadow: 0 0 15px 5px gold;
+}
+
+.trick-card-north, .trick-card-south {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.trick-card-north { top: 10px; }
+.trick-card-south { bottom: 10px; }
+
+.trick-card-west, .trick-card-east {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.trick-card-west { left: 10px; }
+.trick-card-east { right: 10px; }
+
+#passCardsArea {
+    text-align: center;
+    padding: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #ffd700;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #ffec8b;
+}
